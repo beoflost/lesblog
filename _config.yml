@@ -1,0 +1,17 @@
+
+#title: lse
+
+baseurl: "/lesblog" # the subpath of your site, e.g. /blog
+url: "http://blbili.com" # the base hostname & protocol for your site, e.g. http://example.com
+
+header_pages:
+  - index.md
+  - about.md
+
+# Build settings
+theme: jekyll-theme-console
+
+plugins:
+  - jekyll-seo-tag
+
+
