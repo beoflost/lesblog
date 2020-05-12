@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>追杀脚本.pas</title><!-- Begin Jekyll SEO tag v2.6.1 -->
+<meta name="generator" content="Jekyll v4.0.1" />
+<meta property="og:title" content="追杀脚本.pas" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="使用方法: 添加NPC Mir200\Envir\PsNpcScript.txt 脚本存放目录 Mir200\Envir\PsNpcscripts" />
+<meta property="og:description" content="使用方法: 添加NPC Mir200\Envir\PsNpcScript.txt 脚本存放目录 Mir200\Envir\PsNpcscripts" />
+<link rel="canonical" href="http://blbili.com/mir2/data/%E8%BF%BD%E6%9D%80%E8%84%9A%E6%9C%AC" />
+<meta property="og:url" content="http://blbili.com/mir2/data/%E8%BF%BD%E6%9D%80%E8%84%9A%E6%9C%AC" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-05-12T05:02:23-07:00" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","headline":"追杀脚本.pas","dateModified":"2020-05-12T05:02:23-07:00","datePublished":"2020-05-12T05:02:23-07:00","url":"http://blbili.com/mir2/data/%E8%BF%BD%E6%9D%80%E8%84%9A%E6%9C%AC","mainEntityOfPage":{"@type":"WebPage","@id":"http://blbili.com/mir2/data/%E8%BF%BD%E6%9D%80%E8%84%9A%E6%9C%AC"},"description":"使用方法: 添加NPC Mir200\\Envir\\PsNpcScript.txt 脚本存放目录 Mir200\\Envir\\PsNpcscripts","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" type="text/css" href="/assets/main-dark.css"></head>
+<style type="text/css">
+    main ul li a{
+      color: green;
+      text-decoration:none;
+    }
+  </style>
+  <body>
+
+    <div class="container"><header>
+  <div class="menu">
+    <ul><li><a style="color:green" href="/">les_Home</a></li><li><a style="color:green" href="/about/">/About</a></li></ul>
+  </div>
+</header>
+</br>
+    <main>
+      <h1 style="color:green">使用方法:</h1>
+<ol>
+  <li>添加NPC	Mir200\Envir\PsNpcScript.txt</li>
+  <li>脚本存放目录 Mir200\Envir\PsNpcscripts</li>
+</ol>
+
+<hr style="border:0.5px dashed #ccc;margin-top:30px" />
+
+<h1 style="color:green">脚本代码:</h1>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="p">{</span>
+ <span class="n">let</span> <span class="err">战神引擎全系列课程，</span>	<span class="no">QQ</span><span class="err">群：</span><span class="mi">180910177</span> 
+	
+										<span class="ss">beiZhu: 
+</span><span class="p">}</span>  
+<span class="n">program</span> <span class="n">mir2</span><span class="p">;</span> 
+<span class="n">const</span> <span class="no">DecYb</span> <span class="p">:</span><span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+
+<span class="sr">//</span><span class="p">{</span><span class="vg">$I</span> <span class="n">lesCommonScript</span><span class="p">,</span><span class="n">pas</span><span class="p">}</span>
+
+<span class="n">procedure</span> <span class="n">_exit</span><span class="p">;</span>
+<span class="k">begin</span>
+	<span class="no">This_Npc</span><span class="o">.</span><span class="no">CloseDialog</span><span class="p">(</span><span class="no">This_Player</span><span class="p">);</span>
+<span class="k">end</span><span class="p">;</span> 
+
+<span class="n">procedure</span> <span class="n">gotoMap_x</span><span class="p">(</span><span class="n">pName</span><span class="ss">:string</span><span class="p">;</span><span class="n">px</span><span class="p">,</span><span class="n">py</span><span class="ss">:integer</span><span class="p">);</span>
+<span class="k">begin</span>
+	<span class="no">This_Npc</span><span class="o">.</span><span class="no">ScriptRequestSubYBNum</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+	<span class="no">This_Player</span><span class="o">.</span><span class="no">FlyTo</span><span class="p">(</span><span class="n">pName</span><span class="p">,</span><span class="n">px</span><span class="o">+</span><span class="n">random</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="n">py</span><span class="p">);</span>
+<span class="k">end</span><span class="p">;</span>
+
+<span class="n">procedure</span> <span class="n">_Pstrinput</span><span class="p">;</span>
+<span class="k">begin</span>
+	<span class="k">if</span> <span class="no">This_Player</span><span class="o">.</span><span class="no">YBNum</span> <span class="o">&gt;=</span> <span class="mi">100</span> <span class="k">then</span>
+	<span class="k">begin</span>
+		<span class="no">This_Npc</span><span class="o">.</span><span class="no">INputDialog</span><span class="p">(</span><span class="no">This_Player</span><span class="p">,</span><span class="s1">'请输入玩家姓名:'</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">);</span>
+	<span class="k">end</span> <span class="k">else</span> <span class="no">This_Npc</span><span class="o">.</span><span class="no">NPcDialog</span><span class="p">(</span><span class="no">This_Player</span><span class="p">,</span><span class="s1">'你的元宝不够100我不想吊你！'</span><span class="p">):</span>
+<span class="k">end</span><span class="p">;</span>
+
+<span class="n">procedure</span> <span class="no">P100</span><span class="p">;</span>
+<span class="k">begin</span>
+	<span class="k">if</span> <span class="no">This_Npc</span><span class="o">.</span><span class="no">InputOK</span> <span class="k">then</span>
+	<span class="k">begin</span>
+		<span class="k">if</span> <span class="no">This_Player</span><span class="p">.</span><span class="nf">findPlayer</span><span class="p">(</span><span class="no">This_Npc</span><span class="o">.</span><span class="no">INputStr</span><span class="p">)</span> <span class="k">then</span>
+		<span class="k">begin</span>			
+			<span class="n">gotoMap_x</span><span class="p">(</span><span class="no">This_Player</span><span class="p">.</span><span class="nf">findPlayerByName</span><span class="p">(</span><span class="no">This_Npc</span><span class="o">.</span><span class="no">INputStr</span><span class="p">)</span><span class="o">.</span><span class="no">MapName</span><span class="p">,</span><span class="no">This_Player</span><span class="p">.</span><span class="nf">findPlayerByName</span><span class="p">(</span><span class="no">This_Npc</span><span class="o">.</span><span class="no">INputStr</span><span class="p">)</span><span class="o">.</span><span class="no">My_X</span><span class="p">,</span><span class="no">This_Player</span><span class="p">.</span><span class="nf">findPlayerByName</span><span class="p">(</span><span class="no">This_Npc</span><span class="o">.</span><span class="no">INputStr</span><span class="p">)</span><span class="o">.</span><span class="no">My_Y</span><span class="p">);</span>
+		<span class="k">end</span> <span class="k">else</span>
+		<span class="no">This_Npc</span><span class="o">.</span><span class="no">NPcDialog</span><span class="p">(</span><span class="no">This_Player</span><span class="p">,</span><span class="s1">'你输入玩家姓名错误或者玩家不在线。'</span><span class="p">);</span>
+		
+	<span class="k">end</span>
+<span class="k">end</span><span class="p">;</span>
+
+<span class="n">procedure</span> <span class="n">domain</span><span class="p">;</span>
+<span class="k">begin</span>
+	<span class="no">This_Npc</span><span class="o">.</span><span class="no">NPcDialog</span><span class="p">(</span><span class="no">This_Player</span><span class="p">,</span>
+	<span class="s1">'追杀演示  一次需要100元宝'</span><span class="o">+</span>
+	<span class="s1">'{cmd}&lt;送我过去/@Pstrinput&gt;'</span><span class="p">);</span>
+<span class="k">end</span><span class="p">;</span>
+
+<span class="k">begin</span>
+	<span class="n">domain</span><span class="p">;</span>
+	<span class="no">This_Player</span><span class="o">.</span><span class="no">PlayerNotice</span><span class="p">(</span><span class="n">inttostr</span><span class="p">(</span><span class="no">DecYb</span><span class="p">),</span><span class="mi">2</span><span class="p">);</span>
+<span class="k">end</span><span class="o">.</span></code></pre></figure>
+
+
+
+    </main><footer>
+  
+<div style="text-align: center;margin: 10px;color: F8F8F8">
+	<span style="font-size: 14px">欢迎微信扫码打赏我，感谢支持！您的支持是我最大的动力~</span>
+</div>
+<div style="text-align: center;">
+	<img style="margin:0px;width: 220px" src="/assets/img/qq.jpg">	
+</div>
+
+
+
+
+</footer>
+</div>
+  </body>
+</html>

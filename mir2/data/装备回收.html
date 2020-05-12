@@ -3,71 +3,192 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>装备回收.pas</title><!-- Begin Jekyll SEO tag v2.6.1 -->
+  <title>装备自动回收、会员回收、一键回收.pas</title><!-- Begin Jekyll SEO tag v2.6.1 -->
 <meta name="generator" content="Jekyll v4.0.1" />
-<meta property="og:title" content="装备回收.pas" />
+<meta property="og:title" content="装备自动回收、会员回收、一键回收.pas" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="装备回收:" />
-<meta property="og:description" content="装备回收:" />
+<meta name="description" content="使用方法: 添加NPC Mir200\Envir\PsNpcScript.txt 脚本存放目录 Mir200\Envir\PsNpcscripts" />
+<meta property="og:description" content="使用方法: 添加NPC Mir200\Envir\PsNpcScript.txt 脚本存放目录 Mir200\Envir\PsNpcscripts" />
 <link rel="canonical" href="http://blbili.com/mir2/data/%E8%A3%85%E5%A4%87%E5%9B%9E%E6%94%B6" />
 <meta property="og:url" content="http://blbili.com/mir2/data/%E8%A3%85%E5%A4%87%E5%9B%9E%E6%94%B6" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-05-12T05:02:23-07:00" />
 <script type="application/ld+json">
-{"@type":"BlogPosting","url":"http://blbili.com/mir2/data/%E8%A3%85%E5%A4%87%E5%9B%9E%E6%94%B6","headline":"装备回收.pas","dateModified":"2020-05-12T05:02:23-07:00","datePublished":"2020-05-12T05:02:23-07:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://blbili.com/mir2/data/%E8%A3%85%E5%A4%87%E5%9B%9E%E6%94%B6"},"description":"装备回收:","@context":"https://schema.org"}</script>
+{"@type":"BlogPosting","headline":"装备自动回收、会员回收、一键回收.pas","dateModified":"2020-05-12T05:02:23-07:00","datePublished":"2020-05-12T05:02:23-07:00","url":"http://blbili.com/mir2/data/%E8%A3%85%E5%A4%87%E5%9B%9E%E6%94%B6","mainEntityOfPage":{"@type":"WebPage","@id":"http://blbili.com/mir2/data/%E8%A3%85%E5%A4%87%E5%9B%9E%E6%94%B6"},"description":"使用方法: 添加NPC Mir200\\Envir\\PsNpcScript.txt 脚本存放目录 Mir200\\Envir\\PsNpcscripts","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" type="text/css" href="/assets/main-dark.css"></head>
-<body>
+<style type="text/css">
+    main ul li a{
+      color: green;
+      text-decoration:none;
+    }
+  </style>
+  <body>
 
     <div class="container"><header>
   <div class="menu">
-    <ul><li><a href="/">les_Home</a></li><li><a href="/about/">/About</a></li></ul>
+    <ul><li><a style="color:green" href="/">les_Home</a></li><li><a style="color:green" href="/about/">/About</a></li></ul>
   </div>
 </header>
-<h1>les战神引擎分享站</h1>
-  </br>
+</br>
     <main>
-      <p>装备回收:</p>
+      <h1 style="color:green">使用方法:</h1>
+<ol>
+  <li>添加NPC	Mir200\Envir\PsNpcScript.txt</li>
+  <li>脚本存放目录 Mir200\Envir\PsNpcscripts</li>
+</ol>
+
+<hr style="border:0.5px dashed #ccc;margin-top:30px" />
+
+<h1 style="color:green">脚本代码:</h1>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="p">{</span>
- <span class="n">let</span> <span class="err">战神引擎全系列课程，</span>	<span class="no">QQ</span><span class="err">群：</span><span class="mi">180910177</span> 
+<span class="n">let</span> <span class="err">战神引擎全系列课程，</span>	<span class="no">QQ</span><span class="err">群：</span><span class="mi">180910177</span>
 	
-							<span class="ss">beiZhu: 
+										<span class="ss">beiZhu: 
 </span><span class="p">}</span>  
-<span class="n">program</span> <span class="n">mir2</span><span class="p">;</span> 
-<span class="n">const</span> <span class="n">yb_num</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">;</span> <span class="sr">//</span><span class="err">炼体需要元宝</span>
-<span class="sr">//</span><span class="p">{</span><span class="vg">$I</span> <span class="n">lesCommonScript</span><span class="p">,</span><span class="n">pas</span><span class="p">}</span>
 
-<span class="n">procedure</span> <span class="n">reabil</span><span class="p">;</span>
+<span class="n">program</span> <span class="no">Mir2</span><span class="p">;</span>  
+
+<span class="sr">//</span><span class="p">{</span><span class="vg">$I</span> <span class="n">letcommonScripts</span><span class="p">.</span><span class="nf">pas</span><span class="p">}</span>
+
+<span class="n">procedure</span> <span class="n">_Exit</span><span class="p">;</span>  
+<span class="k">begin</span>  
+	<span class="no">This_Npc</span><span class="o">.</span><span class="no">CloseDialog</span><span class="p">(</span><span class="no">This_Player</span><span class="p">);</span>  
+<span class="k">end</span><span class="p">;</span> 
+
+<span class="n">function</span> <span class="n">recoverItemFun</span><span class="p">(</span><span class="n">itemId</span><span class="ss">:integer</span><span class="p">)</span><span class="ss">:string</span><span class="p">;</span>
 <span class="k">begin</span>
-	<span class="no">This_Player</span><span class="o">.</span><span class="no">AddPlayerAbil</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="no">This_Player</span><span class="o">.</span><span class="no">GetV</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span><span class="mi">26</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span><span class="p">,</span><span class="mi">65535</span><span class="p">);</span>	
+	<span class="k">case</span> <span class="n">itemId</span> <span class="n">of</span>
+		<span class="mi">10</span><span class="p">:</span> <span class="n">result</span><span class="p">:</span><span class="o">=</span> <span class="s1">'幽灵项链,幽灵手套,龙之戒指,天珠项链,心灵手镯,铂金戒指,生命项链,思贝儿手镯,红宝石戒指,魔杖,井中月,银蛇'</span><span class="p">;</span>
+		<span class="mi">30</span><span class="p">:</span> <span class="n">result</span><span class="p">:</span><span class="o">=</span> <span class="s1">'绿色项链,骑士手镯,力量戒指,恶魔铃铛,龙之手镯,紫碧螺,灵魂项链,三眼手镯,泰坦戒指,黑铁头盔,紫绸靴,青铜腰带,裁决之杖,骨玉权杖,无极棍,战神盔甲(男),战神盔甲(女),恶魔长袍(男),恶魔长袍(女),幽灵战衣(男),幽灵战衣(女)'</span><span class="p">;</span>
+		<span class="mi">50</span><span class="p">:</span> <span class="n">result</span><span class="p">:</span><span class="o">=</span> <span class="s1">'圣战头盔,圣战项链,圣战手镯,圣战戒指,法神项链,法神头盔,法神手镯,法神戒指,天尊头盔,天尊项链,天尊手镯,天尊戒指,钢铁腰带,避魂靴'</span><span class="p">;</span>
+		<span class="mi">100</span><span class="p">:</span> <span class="n">result</span><span class="p">:</span><span class="o">=</span> <span class="s1">'怒斩,龙牙,龙纹剑,天魔神甲,法神披风,天尊道袍,圣战宝甲,霓裳羽衣,天师长袍'</span>
+		<span class="mi">300</span><span class="p">:</span> <span class="n">result</span><span class="p">:</span><span class="o">=</span> <span class="s1">'雷霆项链,雷霆护腕,雷霆战戒,雷霆战盔,雷霆腰带,雷霆战靴,烈焰项链,烈焰护腕,烈焰魔戒,烈焰魔盔,烈焰腰带,烈焰魔靴,光芒项链,光芒护腕,光芒道戒,光芒道盔,光芒腰带,光芒道靴'</span><span class="p">;</span>
+		<span class="mi">500</span><span class="p">:</span> <span class="n">result</span><span class="p">:</span><span class="o">=</span> <span class="s1">'屠龙,嗜魂法杖,逍遥扇,雷霆战甲(女),烈焰魔衣(女),光芒道袍(女),雷霆战甲(男),烈焰魔衣(男),光芒道袍(男)'</span><span class="p">;</span>
+	<span class="k">end</span><span class="p">;</span>
 <span class="k">end</span><span class="p">;</span>
 
-
-<span class="n">procedure</span> <span class="n">domain</span><span class="p">;</span>
+<span class="n">procedure</span> <span class="n">doMain</span><span class="p">;</span>
+<span class="n">var</span> <span class="n">i</span> <span class="p">:</span> <span class="n">integer</span><span class="p">;</span> <span class="n">recoverON</span> <span class="p">:</span> <span class="n">array</span><span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">6</span><span class="p">]</span> <span class="n">of</span> <span class="n">string</span><span class="p">;</span>
 <span class="k">begin</span>
-	<span class="no">This_Npc</span><span class="o">.</span><span class="no">NpcDialog</span><span class="p">(</span><span class="no">This_Player</span><span class="p">,</span>
-	<span class="s1">'&lt;练体脚本/fcolor=25&gt;~'</span><span class="o">+</span>
-	<span class="s1">'|当前等级'</span><span class="o">+</span><span class="n">inttostr</span><span class="p">(</span><span class="no">This_Player</span><span class="o">.</span><span class="no">GetV</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span><span class="mi">26</span><span class="p">))</span><span class="o">+</span>
-	<span class="s1">'|每次消耗&lt;'</span><span class="o">+</span><span class="n">inttostr</span><span class="p">(</span><span class="n">yb_num</span><span class="p">)</span><span class="o">+</span><span class="s1">'/fcolor=222&gt; 元宝'</span><span class="o">+</span>
-	<span class="s1">'|{cmd}&lt;开始炼体/@AddpointHp&gt;'</span><span class="p">);</span>
-	
-<span class="k">end</span><span class="p">;</span>
-
-<span class="k">begin</span>
-	<span class="k">if</span> <span class="no">This_Player</span><span class="o">.</span><span class="no">GetV</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span><span class="mi">26</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">then</span>
+	<span class="k">for</span> <span class="n">i</span><span class="p">:</span><span class="o">=</span><span class="mi">1</span> <span class="n">to</span> <span class="mi">6</span> <span class="k">do</span>
 	<span class="k">begin</span>
-	<span class="k">end</span> <span class="k">else</span>
-	<span class="no">This_Player</span><span class="o">.</span><span class="no">SetV</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span><span class="mi">26</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
-	<span class="n">domain</span><span class="p">;</span>
-<span class="k">end</span><span class="o">.</span></code></pre></figure>
+		<span class="k">if</span> <span class="no">This_Player</span><span class="o">.</span><span class="no">GetV</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span><span class="n">i</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">then</span>
+		<span class="k">begin</span>
+			<span class="n">recoverON</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">:</span><span class="o">=</span> <span class="s1">'关闭'</span><span class="p">;</span>
+		<span class="k">end</span> <span class="k">else</span> <span class="n">recoverON</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">:</span><span class="o">=</span> <span class="s1">'开启'</span><span class="p">;</span>
+	<span class="k">end</span><span class="p">;</span>
+	<span class="no">This_Npc</span><span class="o">.</span><span class="no">NpcDialog</span><span class="p">(</span><span class="no">This_Player</span><span class="p">,</span>
+	<span class="s1">'沃玛10元宝/每件  经验1千倍 |\'+
+	'</span><span class="err">祖玛</span><span class="mi">30</span><span class="err">元宝</span><span class="o">/</span><span class="err">每件</span>  <span class="err">经验</span><span class="mi">1</span><span class="err">千倍</span> <span class="o">|</span><span class="p">\</span><span class="s1">'+
+	'</span><span class="err">赤月</span><span class="mi">50</span><span class="err">元宝</span><span class="o">/</span><span class="err">每件</span>  <span class="err">经验</span><span class="mi">1</span><span class="err">千倍</span> <span class="o">|</span><span class="p">\</span><span class="s1">'+
+	'</span><span class="err">赤月剑甲系列</span><span class="mi">100</span><span class="err">元宝</span><span class="o">/</span><span class="err">每件</span>  <span class="err">经验</span><span class="mi">1</span><span class="err">千倍</span> <span class="o">|</span><span class="p">\</span><span class="s1">'+
+	'</span><span class="err">魔龙系列</span><span class="mi">300</span><span class="err">元宝</span><span class="o">/</span><span class="err">每件</span>  <span class="err">经验</span><span class="mi">1</span><span class="err">千倍</span> <span class="o">|</span><span class="p">\</span><span class="s1">'+
+	'</span><span class="err">魔龙剑甲系列</span><span class="mi">500</span><span class="err">元宝</span><span class="o">/</span><span class="err">每件</span>  <span class="err">经验</span><span class="mi">1</span><span class="err">千倍</span> <span class="o">|</span><span class="p">\</span><span class="s1">'+
+	'</span><span class="p">{</span><span class="n">cmd</span><span class="p">}</span><span class="o">&lt;</span><span class="err">一键回收沃玛装备</span><span class="o">/</span><span class="vi">@checkVip</span><span class="o">~</span><span class="mi">10</span><span class="o">&gt;</span> <span class="o">^&lt;</span><span class="s1">'+recoverON[1]+'</span><span class="err">自动回收</span><span class="o">/</span><span class="vi">@checkVip</span><span class="o">~</span><span class="mi">1</span><span class="o">&gt;|</span><span class="p">\</span><span class="s1">'+
+	'</span><span class="p">{</span><span class="n">cmd</span><span class="p">}</span><span class="o">&lt;</span><span class="err">一键回收祖玛装备</span><span class="o">/</span><span class="vi">@checkVip</span><span class="o">~</span><span class="mi">30</span><span class="o">&gt;</span> <span class="o">^&lt;</span><span class="s1">'+recoverON[2]+'</span><span class="err">自动回收</span><span class="o">/</span><span class="vi">@checkVip</span><span class="o">~</span><span class="mi">2</span><span class="o">&gt;|</span><span class="p">\</span><span class="s1">'+
+	'</span><span class="p">{</span><span class="n">cmd</span><span class="p">}</span><span class="o">&lt;</span><span class="err">一键回收赤月装备</span><span class="o">/</span><span class="vi">@checkVip</span><span class="o">~</span><span class="mi">50</span><span class="o">&gt;</span> <span class="o">^&lt;</span><span class="s1">'+recoverON[3]+'</span><span class="err">自动回收</span><span class="o">/</span><span class="vi">@checkVip</span><span class="o">~</span><span class="mi">3</span><span class="o">&gt;|</span><span class="p">\</span><span class="s1">'+
+	'</span><span class="p">{</span><span class="n">cmd</span><span class="p">}</span><span class="o">&lt;</span><span class="err">一键回收赤月剑甲</span><span class="o">/</span><span class="vi">@checkVip</span><span class="o">~</span><span class="mi">100</span><span class="o">&gt;</span> <span class="o">^&lt;</span><span class="s1">'+recoverON[4]+'</span><span class="err">自动回收</span><span class="o">/</span><span class="vi">@checkVip</span><span class="o">~</span><span class="mi">4</span><span class="o">&gt;|</span><span class="p">\</span><span class="s1">'+
+	'</span><span class="p">{</span><span class="n">cmd</span><span class="p">}</span><span class="o">&lt;</span><span class="err">一键回收魔龙装备</span><span class="o">/</span><span class="vi">@checkVip</span><span class="o">~</span><span class="mi">300</span><span class="o">&gt;|</span><span class="p">\</span><span class="s1">'+
+	'</span><span class="p">{</span><span class="n">cmd</span><span class="p">}</span><span class="o">&lt;</span><span class="err">一键回收魔龙剑甲</span><span class="o">/</span><span class="vi">@checkVip</span><span class="o">~</span><span class="mi">500</span><span class="o">&gt;</span><span class="p">\</span><span class="s1">'
+	);
+end;
 
-<p>les_免费分享~</p>
+procedure readItemFun(Pstr:string);
+var i , index, cPrice, priceAll : integer; itemName : string;
+begin	
+	if recoverItemFun(strtoint(Pstr)) &lt;&gt; '' then
+	begin
+		index:=1;	
+		for i:=0 to length(recoverItemFun(strtoint(Pstr)))+1  do
+		begin			
+			if (copy(recoverItemFun(strtoint(Pstr)),i,1) = '</span><span class="p">,</span><span class="s1">') or (i = length(recoverItemFun(strtoint(Pstr)))+1) then
+			begin				
+				itemName:=copy(recoverItemFun(strtoint(Pstr)),index,i-index);
+				index := i + 1;					
+				if This_Player.GetBagItemCount(itemName) &gt; 0 then
+				begin
+					priceAll := priceAll + strtoint(Pstr) * This_Player.GetBagItemCount(itemName);
+					This_Player.Take(itemName,This_Player.GetBagItemCount(itemName));					
+				end else
+			end 
+			else 			
+		end;
+		
+		if priceAll &gt; 0 then
+		begin	
+			if This_Player.GetV(95,25) = 30 then
+			begin
+				priceAll:= integer(Trunc(priceAll * 1.1));
+			end else
+			if This_Player.GetV(95,25) = 50 then
+			begin
+				priceAll:= integer(Trunc(priceAll * 1.2));
+			end else
+			if This_Player.GetV(95,25) = 150 then
+			begin
+				priceAll:= integer(Trunc(priceAll * 1.3));
+			end else
+			if This_Player.GetV(95,25) = 300 then
+			begin
+				priceAll:= integer(Trunc(priceAll * 1.5));
+			end;
+			This_Player.ScriptRequestAddYBNum(priceAll);
+			This_Player.Give('</span><span class="err">经验</span><span class="s1">',priceAll * 1000);
+		end else
+			This_Npc.NpcDialog(This_Player,'</span><span class="err">没有可回收的物品</span><span class="o">|</span><span class="p">\</span><span class="s1">'+'</span><span class="p">{</span><span class="n">cmd</span><span class="p">}</span><span class="o">&lt;</span><span class="err">返回</span><span class="o">/</span><span class="vi">@main</span><span class="o">&gt;</span><span class="s1">');
+	end else 
+		This_Player.PlayerDialog('</span><span class="err">未知错误</span><span class="s1">');
+end;
+
+procedure autoCoverItem(showCode:string);
+begin	
+	if This_Player.GetV(60,10) &gt; 0 then
+	begin	
+		This_Player.SetV(60,10,0);
+		This_Player.SetV(60,strtoint(showCode),0);		
+	end else
+	begin
+		This_Player.SetV(60,10,1);
+		This_Player.SetV(60,strtoint(showCode),1);		
+	end;
+	doMain;
+end;
+
+procedure _checkVip(PStr:string);
+begin	
+	if strtoint(PStr) &gt;= 10 then
+	begin
+		readItemFun(PStr);
+	end 
+	else if  strtoint(PStr) &lt; 5 then
+	begin
+		if This_Player.GetV(95,25) = 300 then
+		begin
+			autoCoverItem(PStr);
+		end else This_Player.PlayerDialog('</span><span class="err">你不是至尊会员无法使用此功能</span><span class="s1">');
+	end else This_Player.PlayerDialog('</span><span class="err">未知错误请联系管理员'</span><span class="p">);</span>	
+<span class="k">end</span><span class="p">;</span>
+
+<span class="k">begin</span>	
+	<span class="n">doMain</span><span class="p">;</span>	
+<span class="k">end</span><span class="o">.</span>    </code></pre></figure>
 
 
 
     </main><footer>
   
+<div style="text-align: center;margin: 10px;color: F8F8F8">
+	<span style="font-size: 14px">欢迎微信扫码打赏我，感谢支持！您的支持是我最大的动力~</span>
+</div>
+<div style="text-align: center;">
+	<img style="margin:0px;width: 220px" src="/assets/img/qq.jpg">	
+</div>
+
+
+
+
 </footer>
 </div>
   </body>

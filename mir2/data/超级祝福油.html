@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>超级祝福油.pas</title><!-- Begin Jekyll SEO tag v2.6.1 -->
+<meta name="generator" content="Jekyll v4.0.1" />
+<meta property="og:title" content="超级祝福油.pas" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="使用方法: 数据库添加 该物品 添加 Mir200\Envir\PsItemScript\超级祝福油.pas 脚本代码:" />
+<meta property="og:description" content="使用方法: 数据库添加 该物品 添加 Mir200\Envir\PsItemScript\超级祝福油.pas 脚本代码:" />
+<link rel="canonical" href="http://blbili.com/mir2/data/%E8%B6%85%E7%BA%A7%E7%A5%9D%E7%A6%8F%E6%B2%B9" />
+<meta property="og:url" content="http://blbili.com/mir2/data/%E8%B6%85%E7%BA%A7%E7%A5%9D%E7%A6%8F%E6%B2%B9" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-05-12T05:02:23-07:00" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","headline":"超级祝福油.pas","dateModified":"2020-05-12T05:02:23-07:00","datePublished":"2020-05-12T05:02:23-07:00","url":"http://blbili.com/mir2/data/%E8%B6%85%E7%BA%A7%E7%A5%9D%E7%A6%8F%E6%B2%B9","mainEntityOfPage":{"@type":"WebPage","@id":"http://blbili.com/mir2/data/%E8%B6%85%E7%BA%A7%E7%A5%9D%E7%A6%8F%E6%B2%B9"},"description":"使用方法: 数据库添加 该物品 添加 Mir200\\Envir\\PsItemScript\\超级祝福油.pas 脚本代码:","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" type="text/css" href="/assets/main-dark.css"></head>
+<style type="text/css">
+    main ul li a{
+      color: green;
+      text-decoration:none;
+    }
+  </style>
+  <body>
+
+    <div class="container"><header>
+  <div class="menu">
+    <ul><li><a style="color:green" href="/">les_Home</a></li><li><a style="color:green" href="/about/">/About</a></li></ul>
+  </div>
+</header>
+</br>
+    <main>
+      <h1 style="color:green">使用方法:</h1>
+<ol>
+  <li>数据库添加 该物品</li>
+  <li>添加 Mir200\Envir\PsItemScript\超级祝福油.pas</li>
+</ol>
+
+<hr style="border:0.5px dashed #ccc;margin-top:30px" />
+
+<h1 style="color:green">脚本代码:</h1>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="p">{</span>
+ <span class="n">let</span> <span class="err">战神引擎全系列课程，</span>	<span class="no">QQ</span><span class="err">群：</span><span class="mi">180910177</span> 
+	
+						<span class="ss">beiZhu: 
+</span><span class="p">}</span>  
+<span class="n">function</span> <span class="no">UseItem</span><span class="p">:</span> <span class="no">Boolean</span><span class="p">;</span>
+
+<span class="k">begin</span>
+	<span class="k">if</span> <span class="no">This_Player</span><span class="o">.</span><span class="no">GetWeaponLucky</span><span class="p">(</span><span class="kp">true</span><span class="p">,</span><span class="kp">false</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">7</span> <span class="k">then</span>
+	<span class="k">begin</span>
+		<span class="no">Result</span><span class="p">:</span><span class="o">=</span> <span class="kp">false</span><span class="p">;</span>
+		<span class="no">This_Player</span><span class="o">.</span><span class="no">PlayerNotice</span><span class="p">(</span><span class="s1">'武器幸运已达上限'</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+	<span class="k">end</span>
+	<span class="k">else</span>
+	<span class="k">if</span> <span class="no">This_Player</span><span class="o">.</span><span class="no">SetWeaponLucky</span><span class="p">(</span><span class="no">This_Player</span><span class="o">.</span><span class="no">GetWeaponLucky</span><span class="p">(</span><span class="kp">true</span><span class="p">,</span><span class="kp">false</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="kp">false</span><span class="p">)</span> <span class="k">then</span>
+	<span class="k">begin</span>
+		<span class="no">Result</span> <span class="p">:</span><span class="o">=</span> <span class="kp">true</span><span class="p">;</span>
+		<span class="no">This_Player</span><span class="o">.</span><span class="no">PlayerNotice</span><span class="p">(</span><span class="s1">'你的武器获得了祝福'</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+	<span class="k">end</span> 
+<span class="k">end</span><span class="p">;</span>
+
+<span class="k">begin</span>
+<span class="k">end</span><span class="o">.</span></code></pre></figure>
+
+
+
+    </main><footer>
+  
+<div style="text-align: center;margin: 10px;color: F8F8F8">
+	<span style="font-size: 14px">欢迎微信扫码打赏我，感谢支持！您的支持是我最大的动力~</span>
+</div>
+<div style="text-align: center;">
+	<img style="margin:0px;width: 220px" src="/assets/img/qq.jpg">	
+</div>
+
+
+
+
+</footer>
+</div>
+  </body>
+</html>
